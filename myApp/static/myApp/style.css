@@ -1,0 +1,554 @@
+/* Reset default styles and add some basic styling */
+
+/*use Style.css this file will be removed later*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Heading */
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #28a745;
+}
+
+h1 {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #28a745;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #3f51b5;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+/* Style the header with a navigation menu */
+header {
+    background-color: #3f51b5;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1, footer p {
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style the main content section */
+.main-content {
+    padding: 20px;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+}
+
+.trading-platform {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 25px;
+}
+
+.currency-rates {
+    display: inline-block;
+    text-align: left;
+    padding: 10px;
+}
+
+.market-trends {
+    display: inline-block;
+    text-align: right;
+    padding: 10px 200px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #3f51b5;
+    color: #fff;
+    text-decoration: double;
+    border-radius: 20px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #3f51b5;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.currency-rates, .market-trends, .payment {
+    /* Add any additional styling for individual sections if needed */
+    margin: 0 10px; /* Adjust the margin based on your preference */
+}
+
+.sections-container {
+    display: flex;
+    justify-content: space-around; /* Adjust this based on your layout preference */
+    align-items: center; /* Adjust this based on your layout preference */
+}
+
+.contact-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+.contact-section h2 {
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.contact-section p {
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+/* Add styles for other sections like currency rates and market trends as needed */
+
+
+/*start Old toggle css can be removed later*/
+
+
+/*.toggle-section {*/
+/*    background-color: white;*/
+/*    padding: 20px;*/
+/*    border-radius: 10px;*/
+/*    text-align: center;*/
+/*    color: white;*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
+/*    margin-bottom: 25px;*/
+/*    box-sizing: border-box;*/
+/*    display: flex;*/
+/*    justify-content: flex-end;*/
+/*    align-items: flex-start;*/
+
+/*}*/
+
+/*#toggle-container {*/
+/*    margin-top: 10px;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*#toggle {*/
+/*    display: none;*/
+/*}*/
+
+/*#toggle-label {*/
+/*    background-color: #3498db;*/
+/*    color: #fff;*/
+/*    padding: 10px;*/
+/*    cursor: pointer;*/
+/*    user-select: none;*/
+/*}*/
+
+/*This add another div in the toggle div*/
+/*#content {*/
+/*    display: none; !* Initially hide the content *!*/
+/*    padding: 10px;*/
+/*    border: 1px solid #ccc;*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*#toggle:checked + #toggle-label + #content {*/
+/*    display: block;*/
+/*}*/
+
+/* End Old toggle css can be removed later*/
+
+
+
+/*toggle switch button*/
+
+/* Add this to your static/css/styles.css or within a <style> tag in the head of your HTML */
+
+/* Styles for the toggle switch */
+/* Container for the whole toggle switch, ensures the background is white and content is aligned */
+/*.toggle-container {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  background-color: white;*/
+/*  padding: 25px;*/
+/*  border-radius: 10px;*/
+/*  justify-content: flex-end;*/
+/*  width: 100%;*/
+/*  margin-bottom: 20px;*/
+/*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
+/*}*/
+
+.toggle-highlights{
+  display: flex;
+    flex-direction: column;
+  align-items: flex-end;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#content {
+    margin-top: 10px; /* Add some margin for separation */
+    width: 100%;
+}
+
+.toggle-container {
+    margin-left: auto; /* Push the toggle-container to the right side */
+}
+
+.toggle-label-text {
+    margin-right: 10px; /* Add some margin for spacing between label and switch */
+}
+
+/* Styles for the text label, placed next to the toggle */
+.toggle-label-text {
+  margin-right: 10px; /* Adds some space between the text and the toggle */
+}
+
+/* The switch - the box around the slider */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px; /* Width of the outside box */
+  height: 25px; /* Height of the outside box */
+}
+
+/* Hide default HTML checkbox */
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* Slider background when it's off */
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 21px; /* Height of the inside circle */
+  width: 21px; /* Width of the inside circle */
+  top:2px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3; /* Slider background when it's on */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px); /* Distance to move the inside circle */
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*styles for coins*/
+.coin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.coin-table th, .coin-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.coin-table th {
+  background-color: #f2f2f2;
+}
+
+.coin-table img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+/* Add custom styles here */
+.coin-table th, .coin-table td {
+  text-align: center;
+}
+
+.coin-logo {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card-title {
+  color: #17a2b8;
+  font-size: 1.5rem;
+}
+
+.highlight-title {
+  color: #fff;
+  background-color: #17a2b8;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/*trading and base html page css*/
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color for the page */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the trading page container */
+.trading-page {
+    max-width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the trading header */
+.trading-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style the trading pair information */
+.trading-pair h2 {
+    color: #007bff;
+}
+
+/* Style the trading container to display chart and platform side by side */
+.trading-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style the trading chart */
+.trading-chart {
+    flex: 1;
+}
+
+/* Style the trading platform */
+.trading-platform {
+    flex: 1;
+    padding-left: 20px;
+}
+
+/* Style the form inside the trading platform */
+form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+/* Make trading-page fill the page */
+.trading-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Set trading-container to fill the available space at the top */
+.trading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%; /* Adjust the width as needed */
+    height: 100%; /* 100% of the container height */
+}
+
+.left-column {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.right-column {
+    flex: 1;
+}
+
+/* Set the trading-chart to fill the available space */
+.trading-chart {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* 100% of the container height */
+}
+
+/* Set the max-width of the image to 100% to fit the container */
+.chart-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/*trading and base html end*/
+
+/*paymetn page*/
+
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.payment-form {
+    max-width: 400px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.payment-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left; /* Adjusted to align the labels to the left */
+}
+
+.payment-form input,
+.payment-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Added to include padding and border in element's total width */
+}
+
+.payment-form button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.payment-form button:hover {
+    background-color: #0056b3;
+}
+
+
+/*paymetn page end*/

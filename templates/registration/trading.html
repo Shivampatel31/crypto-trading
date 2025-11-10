@@ -1,0 +1,78 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{% block content %}
+<div class="trading-page">
+    <div class="trading-container">
+        <div class="left-column">
+            <div class="trading-pair">
+                <h2>{{ coin_name }} ({{ coin_symbol }}) </h2>
+                <p>Price: ${{ coin_price }} / US Dollar (USD)</p>
+            </div>
+
+            <div class="trading-order">
+                <h3>Place an Order</h3>
+                <form action="{% url 'place_order' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="coin_symbol" value="{{ coin_symbol }}">
+                    <input type="hidden" name="coin_name" value="{{ coin_name }}">
+                    <input type="hidden" name="transaction_type" id="transaction_type" value="">
+                    <!-- ... other form fields ... -->
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="text" name="quantity" id="quantity" class="form-control" placeholder="Enter quantity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="text" name="price" id="price" class="form-control" placeholder="Enter price" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success" onclick="setTransactionType('BUY')">Buy</button>
+                        <button type="button" class="btn btn-danger" onclick="setTransactionType('SELL')">Sell</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="trading-chart">
+                <!-- Trading Chart Canvas -->
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Include Chart.js from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+ function setTransactionType(type) {
+        document.getElementById('transaction_type').value = type;
+        document.querySelector('form').submit();
+    }
+
+    // Assuming 'data' and 'labels' are passed from your Django view to the template
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line', // Change to 'bar', 'pie', etc. as needed
+        data: {
+            labels: {{ labels|safe }}, // Labels for the X-axis
+            datasets: [{
+                label: 'Price Trend',
+                data: {{ data|safe }}, // Data points for the Y-axis
+                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Customize as needed
+                borderColor: 'rgba(54, 162, 235, 1)', // Customize as needed
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

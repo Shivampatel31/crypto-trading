@@ -1,0 +1,52 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{% block content %}
+<body>
+{#    <div class="navbar">#}
+{#        <h1>Windsor Forex Trading Platform's Payment Portal</h1>#}
+{#    </div>#}
+	<div class="payment-container">
+        <div class="payment-form">
+            <form method="post" action="{% url 'payment_confirm' %}">
+                {% csrf_token %}
+                <div>
+                    <label for="amount">Amount:</label>
+                    <input type="text" id="amount" name="amount" required>
+                </div>
+                <div>
+                    <label for="card_number">Card Number:</label>
+                    <input type="text" id="card_number" name="card_number" required pattern="\d{16}" title="Card number must be 16 digits">
+                </div>
+                <div>
+                    <label for="user_name">User Name on Card:</label>
+                    <input type="text" id="user_name" name="user_name" required>
+                </div>
+                <div>
+                    <label for="expiry_date">Expiry Date:</label>
+                    <input type="text" id="expiry_date" name="expiry_date" required>
+                </div>
+                <div>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required pattern="\d{3,4}" title="CVV must be 3 or 4 digits">
+                </div>
+                <div>
+                    <label for="payment_option">Payment Option:</label>
+                    <select id="payment_option" name="payment_option" required>
+                        <option value="credit_card">Credit Card</option>
+                        <option value="debit_card">Debit Card</option>
+                    </select>
+                </div>
+                <button type="submit">Pay Now</button>
+            </form>
+        </div>
+    </div>
+{% if success %}
+<script>
+    alert('Payment is successful');
+        window.location.href = "{{ homepage.html }}";
+</script>
+{% endif %}
+</body>
+{% endblock %}
+
+
